@@ -1,0 +1,25 @@
+.env
+__pycache__/
+.DS_Store
+
+# Generated reports
+report.md
+*.md.backup
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Python
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
