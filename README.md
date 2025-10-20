@@ -101,6 +101,45 @@ The AI Travel Agent needs the following information to create your personalized 
 
 The ai-travel-agent Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
 
+## Deployment 🌐
+
+Want to make your AI Travel Agent accessible on the web? We've got you covered!
+
+### Quick Deploy Options:
+
+1. **Streamlit Cloud (Free & Easy)** ☁️
+   - Push your code to GitHub
+   - Deploy in 3 clicks at [share.streamlit.io](https://share.streamlit.io)
+   - Get a public URL instantly!
+
+2. **ngrok (Quick Testing)** 🔗
+   - Install ngrok
+   - Run: `bash run_ngrok.sh`
+   - Share the temporary public URL
+
+3. **Railway, Heroku, AWS, etc.** 🚂
+   - Full deployment options available
+
+📖 **Full deployment guide**: See [DEPLOYMENT.md](DEPLOYMENT.md) for step-by-step instructions for all platforms!
+📋 **Quick reference**: [DEPLOY_QUICK_REFERENCE.md](DEPLOY_QUICK_REFERENCE.md) - One-page cheat sheet for all deployment methods
+
+### Quick Deploy to Streamlit Cloud:
+
+```bash
+# 1. Push to GitHub
+git add .
+git commit -m "Deploy AI Travel Agent"
+git push origin main
+
+# 2. Go to share.streamlit.io
+# 3. Click "New app"
+# 4. Select your repo and set main file: src/ai_travel_agent/app.py
+# 5. Add your OPENAI_API_KEY in secrets
+# 6. Deploy!
+```
+
+Your app will be live at: `https://your-app-name.streamlit.app` 🎉
+
 ## Support
 
 For support, questions, or feedback regarding the AiTravelAgent Crew or crewAI.

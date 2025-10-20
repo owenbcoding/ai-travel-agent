@@ -1,10 +1,27 @@
 #!/usr/bin/env python
 import streamlit as st
 import warnings
+import os
 from datetime import datetime
+from pathlib import Path
 from ai_travel_agent.crew import AiTravelAgent
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
+
+# Load environment variables from .env if available (for local development)
+try:
+    from dotenv import load_dotenv
+    env_path = Path(__file__).parent.parent.parent / '.env'
+    load_dotenv(env_path)
+except ImportError:
+    pass
+
+# Set OpenAI API key from Streamlit secrets or environment
+if hasattr(st, 'secrets') and 'OPENAI_API_KEY' in st.secrets:
+    os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
+elif 'OPENAI_API_KEY' not in os.environ:
+    st.error("⚠️ OPENAI_API_KEY not found! Please set it in .env file or Streamlit secrets.")
+    st.stop()
 
 # Set page config
 st.set_page_config(
